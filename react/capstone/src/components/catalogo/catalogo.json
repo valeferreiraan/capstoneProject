@@ -1,0 +1,21 @@
+{"cursos": [
+    {
+    "id":1,
+    "nombre":"inglés 1",
+    "thumbnail":"https://media.istockphoto.com/id/914314318/photo/young-man-using-laptop-with-female-student-watching-and-smiling.jpg?s=612x612&w=0&k=20&c=ky2a8mV2Fw8v4QYXFUtxAOOMs14lbOM5BPVyK1xw7-k=",
+    "tipocurso":"URMooc"
+    },
+    {
+        "id":2,
+        "nombre":"ciberseguridad",
+        "thumbnail":"https://media.istockphoto.com/id/914314318/photo/young-man-using-laptop-with-female-student-watching-and-smiling.jpg?s=612x612&w=0&k=20&c=ky2a8mV2Fw8v4QYXFUtxAOOMs14lbOM5BPVyK1xw7-k=",
+        "tipocurso":"Curso Pregrado"
+    },
+    {
+        "id":3,
+        "nombre":"Liderazgo",
+        "thumbnail":"https://media.istockphoto.com/id/914314318/photo/young-man-using-laptop-with-female-student-watching-and-smiling.jpg?s=612x612&w=0&k=20&c=ky2a8mV2Fw8v4QYXFUtxAOOMs14lbOM5BPVyK1xw7-k=",
+        "tipocurso":"URMooc"
+    }
+    
+]}
