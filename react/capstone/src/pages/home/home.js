@@ -23,7 +23,7 @@ function Home(){
                     *inserte mucho texto aquí sobre el proyecto*
                 </p>
 
-                <div class="boton">
+                <div class="boton" >
                     <a href="#">
                         Haz tu ruta de aprendizaje aquí
                     </a>

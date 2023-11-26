@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;500;600&display=swap');
 
 *{
-    margin:0px;
+    margin:0;
 }
 
 :root{
@@ -39,10 +39,6 @@ p{
   font-size: 1rem;
   font-weight: 300;
 }
-
-
-
-
 
 
 /*los que vienen por default que me da miedo tocar*/
