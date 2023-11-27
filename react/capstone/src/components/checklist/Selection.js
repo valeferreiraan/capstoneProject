@@ -168,7 +168,7 @@ export default function HookFormDoc() {
         <div className="modal-content">
             <h4>Descripción del curso</h4>
         <p>{modalDescription}</p>
-        <button onClick={()=>setMostrarModal(false)}>Cerrar Modal</button>
+        <button onClick={()=>setMostrarModal(false)}>Cerrar </button>
             </div>
       </div>
     )}
