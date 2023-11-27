@@ -5,12 +5,14 @@ import Catalogo from '../../components/catalogo/Catalogo';
 
 import './home.css';
 
+import {Link} from "react-router-dom";
+
 function Home(){
     return(
         <div>
             <Header />
             <div class = "content">
-                <Subheader />
+                <Subheader title="Rutas de aprendizaje" />
             <div class="expl">
                 <h2>
                     ¿Qué habilidades quieres adquirir? Te mostramos tu ruta de aprendizaje
@@ -18,19 +20,29 @@ function Home(){
 
                 <br/><br/><br/>
                 <p>
-                    Utilizando procesamiento de lenguaje natural e inteligencia artificial, creamos un algoritmo capaz de mostrar rutas de aprendizaje con nuestros URMoocs, cursos de pregrados y cursos de posgrados... 
-                    <br/>
-                    *inserte mucho texto aquí sobre el proyecto*
+                En URutas puedes encontrar las mejores rutas de aprendizaje que la Universidad del Rosario tiene para ofrecer, combinando diferentes disciplinas y áreas temáticas.
+                <br/>
+
+                El algoritmo de generación de rutas hace uso de tecnologías emergentes y vanguardistas para determinar el mejor camino para desarrollar una nueva habilidad. Esto se logra al relacionar cursos diversos y disruptivos, que buscan formar en conocimientos específicos.
+                <br/>
+
+                El modelo de URutas está diseñado para generar rutas acordes a cualquier habilidad que se desee, incluyendo aquellas ampliamente recomendadas por la vanguardia de la industria; como el Foro Económico Mundial.
                 </p>
 
                 <div class="boton" >
-                    <a href="#">
+                    <Link to='/search'>
                         Haz tu ruta de aprendizaje aquí
-                    </a>
+                    </Link>
                 </div>
             </div>
+            <div className="cat">
+                <h2>Lista de cursos</h2>
 
-            <Catalogo />
+                <Catalogo />
+
+            </div>
+
+            
 
             
             

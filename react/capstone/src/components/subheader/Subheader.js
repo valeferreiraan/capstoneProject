@@ -1,10 +1,10 @@
 import './Subheader.css';
 
-function Subheader(){
+function Subheader({title}){
     return(
-        <div class="subheader">
-            <div class="Title">
-                <h1>Rutas de aprendizaje</h1>
+        <div className="subheader">
+            <div className="Title">
+                <h1>{title}</h1>
             </div>
         </div>
     )
