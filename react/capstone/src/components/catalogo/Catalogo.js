@@ -17,6 +17,13 @@ function Catalogo(){
       const cerrarModal = () => {
         setMostrarModal(false);
       };
+
+      const handleClick = (descripcion) => {
+        console.log('abriendo modaaal');
+        setModalDescription(descripcion);
+        setMostrarModal(true);
+      }
+    
     
     return(
         <div class = "catalogo">
@@ -25,8 +32,8 @@ function Catalogo(){
                     key = {item.index}
                     title = {item.Título}
                     area = {item.area}
-                    descripcion={item.descripcion}
-                    onClick={abrirModal}
+                    descripcion={item.proposito}
+                    onClick={handleClick}
                     />
                 ))}
                 
@@ -36,7 +43,7 @@ function Catalogo(){
         <div className="modal-content">
             <h4>Descripción del curso</h4>
         <p>{modalDescription}</p>
-        <button onClick={cerrarModal}>Cerrar Modal</button>
+        <button onClick={()=>setMostrarModal(false)}>Cerrar Modal</button>
             </div>
       </div>
     )}

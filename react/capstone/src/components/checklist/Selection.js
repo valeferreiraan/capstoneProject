@@ -109,6 +109,12 @@ export default function HookFormDoc() {
         setMostrarModal(false);
       };
 
+      const handleClick = (descripcion) => {
+        console.log('abriendo modaaal');
+        setModalDescription(descripcion);
+        setMostrarModal(true);
+      }
+
     return (
         <div >
             <form onSubmit={handleSubmit(handleGetJson)} className="flex flex-col align-items-center gap-44 searchbar">
@@ -153,7 +159,7 @@ export default function HookFormDoc() {
                     title = {item.titulo}
                     area = {item.area}
                     descripcion={item.descripcion}
-                    onClick={abrirModal}
+                    onClick={handleClick}
                     />
                 ))}
 
@@ -162,7 +168,7 @@ export default function HookFormDoc() {
         <div className="modal-content">
             <h4>Descripción del curso</h4>
         <p>{modalDescription}</p>
-        <button onClick={cerrarModal}>Cerrar Modal</button>
+        <button onClick={()=>setMostrarModal(false)}>Cerrar Modal</button>
             </div>
       </div>
     )}

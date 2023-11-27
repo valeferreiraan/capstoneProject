@@ -35,12 +35,18 @@ function Search(){
     const abrirModal = (description) => {
         setModalDescription(description);
         console.log('mostrando modal');
+        
         setMostrarModal(true);
       };
       
       const cerrarModal = () => {
         setMostrarModal(false);
       };
+      const handleClick = (descripcion) => {
+        console.log('abriendo modaaal');
+        setModalDescription(descripcion);
+        setMostrarModal(true);
+      }
     
    
 
@@ -63,14 +69,14 @@ function Search(){
                     title = {item.titulo}
                     area = {item.area}
                     descripcion={item.descripcion}
-                    onClick={abrirModal}/>
+                    onClick={handleClick}/>
                 ))}
                 {mostrarModal && (
       <div className="modal">
         <div className="modal-content">
             <h4>Descripción del curso</h4>
         <p>{modalDescription}</p>
-        <button onClick={cerrarModal}>Cerrar Modal</button>
+        <button onClick={()=>setMostrarModal(false)}>Cerrar Modal</button>
             </div>
       </div>
     )}
