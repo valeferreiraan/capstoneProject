@@ -7,9 +7,10 @@ import './style.css'
 import 'primeflex/primeflex.css';
 import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import 'primereact/resources/primereact.css';
-import chroma from 'chroma-js'
-import Select, { StylesConfig } from 'react-select';
 import cursos from "../../cursos.json";
+
+
+import CardSearch from '../../components/cardSearch/CardSearch';
 export default function HookFormDoc() {
 
     const toast = useRef(null);
@@ -96,9 +97,21 @@ export default function HookFormDoc() {
       ) ;
     };
 
+    const [modalDescription, setModalDescription] = useState(''); 
+  const [mostrarModal, setMostrarModal] = useState(false);
+    const abrirModal = (description) => {
+        setModalDescription(description);
+        console.log('mostrando modal');
+        setMostrarModal(true);
+      };
+      
+      const cerrarModal = () => {
+        setMostrarModal(false);
+      };
+
     return (
-        <div className="card flex justify-content-center">
-            <form onSubmit={handleSubmit(handleGetJson)} className="flex flex-col align-items-center gap-44 ">
+        <div >
+            <form onSubmit={handleSubmit(handleGetJson)} className="flex flex-col align-items-center gap-44 searchbar">
                 <Toast ref={toast} />
                 <Controller
                     name="value"
@@ -133,46 +146,33 @@ export default function HookFormDoc() {
                 <Button  type="submit" label="Buscar" className="ml-6 mt-2 border-ra" />
             </form>
 
-            <div className="container mt-4" align="center">
+            <div className="coursesList">
+            {cursos.map(item =>(
+                    <CardSearch
+                    key = {item.id}
+                    title = {item.titulo}
+                    area = {item.area}
+                    descripcion={item.descripcion}
+                    onClick={abrirModal}
+                    />
+                ))}
 
-                <h4>Lista de Cursos</h4>
-
-                <div className="row">
-
-                    <div className="col-md-12">
-
-                        <table className="table table-bordered">
-                            <thead className="thead-dark">
-                            <tr>
-                                <th scope="col">ID</th>
-                                <th scope="col">Titulo</th>
-                                <th scope="col">Descripción</th>
-                                <th scope="col">Área temática</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-
-                            {cursos.map(item => (
-
-                                <tr key={item.id}>
-                                    <td>{item.id}</td>
-                                    <td>{item.titulo}</td>
-                                    <td>{item.descripcion}</td>
-                                    <td>{item.area}</td>
-                                </tr>
-
-                            ))}
-
-                            </tbody>
-
-                        </table>
-
-                    </div>
-
-                </div>
-
-
+{mostrarModal && (
+      <div className="modal">
+        <div className="modal-content">
+            <h4>Descripción del curso</h4>
+        <p>{modalDescription}</p>
+        <button onClick={cerrarModal}>Cerrar Modal</button>
             </div>
+      </div>
+    )}
+                
+            </div>
+
+            
+
+
+            
         </div>
     )
 }

@@ -3,6 +3,7 @@ from get_json_from_prompt import get_json_from_prompt
 import pandas as pd
 from flask_cors import CORS
 from get_prompt_from_habilities import get_prompt_from_habilities
+import os
 
 import json
 
@@ -16,7 +17,9 @@ def buscar():
    print('data',data)
    prompt = data.get('prompt', '')
    print(prompt)
-   dataset = pd.read_csv('Cursos_UR_Normalizados_completo.csv')
+   file_path = os.path.abspath('Cursos_UR_Normalizados_completo.csv')
+   dataset = pd.read_csv(file_path)
+   
    # Llamada a tu función existente
    datos = get_json_from_prompt(prompt, dataset)
 

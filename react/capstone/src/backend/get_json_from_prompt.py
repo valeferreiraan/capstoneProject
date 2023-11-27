@@ -24,9 +24,10 @@ def get_json_from_prompt(prompt, dataset):
         lista_de_diccionarios.append(curso_dict)
 
     json_data = json.dumps(lista_de_diccionarios, ensure_ascii=False, indent=2)
-    ruta_archivo = "../cursos.json"
+    ruta_archivo = "react/capstone/src/cursos.json"
 
     ruta_completa = os.path.abspath(ruta_archivo)
+    print('RUTAA', ruta_completa)
     with open(ruta_completa, "w", encoding='utf-8') as json_file:
            json.dump(lista_de_diccionarios, json_file, ensure_ascii=False, indent=2)
 
